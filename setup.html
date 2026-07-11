@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>????????? ??? ???? - ??????? ??????</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: #dfe3e6;
+    margin: 0;
+    padding: 30px 0 60px;
+    color: #1a1a1a;
+  }
+
+  .sheet {
+    width: 850px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px 70px 60px;
+    position: relative;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+    min-height: 1160px;
+  }
+
+  /* ===== Header ===== */
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .logo-left, .logo-right {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .logo-left { border: 2px solid #00a651; background: #f9fffb; color: #00a651; }
+  .logo-right { border: 2px solid #ed1c24; background: #fff9f9; color: #ed1c24; }
+
+  .header-center {
+    text-align: center;
+    flex: 1;
+  }
+  .header-center .office-title {
+    color: #00a651;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .header-center .office-loc {
+    color: #ed1c24;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .header-center .estb {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .date-line {
+    font-size: 14.5px;
+    color: #222;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  /* ===== Title ===== */
+  .title-container {
+    text-align: center;
+    margin: 40px 0 30px;
+  }
+  .title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== Cert number ===== */
+  .cert-no-row {
+    margin-bottom: 30px;
+  }
+  .cert-no-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  .cert-no-boxes {
+    display: flex;
+    gap: 2px;
+  }
+  .cert-no-boxes input {
+    width: 22px;
+    height: 26px;
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #555;
+    border-radius: 1px;
+    padding: 0;
+    background: #fff;
+  }
+
+  /* ===== Photo ===== */
+  .photo-box {
+    position: absolute;
+    top: 245px;
+    right: 70px;
+    width: 95px;
+    height: 115px;
+    border: 1px solid #999;
+    background: #eef3f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+    padding: 4px;
+  }
+
+  /* ===== Seal watermark ===== */
+  .seal-watermark {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 380px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.12;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    margin-top: 25px;
+  }
+
+  .intro {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+
+  .field-row {
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 16.5px;
+    line-height: 1.6;
+    align-items: flex-start;
+  }
+  .field-label {
+    width: 150px;
+    flex-shrink: 0;
+  }
+  .field-colon {
+    width: 25px;
+    flex-shrink: 0;
+  }
+  .field-value {
+    flex: 1;
+    min-height: 26px;
+  }
+  .field-value[contenteditable="true"]:focus {
+    outline: 1px dashed #00a651;
+    background: rgba(0,166,81,0.05);
+  }
+  
+  .address-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .paragraph {
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 35px 0 45px;
+    text-align: justify;
+  }
+
+  /* ===== Signature ===== */
+  .signature-section {
+    margin-top: 110px;
+    text-align: center;
+    width: 240px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .signature-section .line {
+    border-top: 1px solid #444;
+    margin-bottom: 6px;
+    width: 100%;
+  }
+  .signature-section .role {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+  }
+  .signature-section .org {
+    font-size: 14px;
+    color: #333;
+    margin-top: 1px;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd;
+    padding: 12px 70px;
+    font-size: 11.5px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+  }
+  .footer-left { font-weight: 500; }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .sheet { box-shadow: none; padding: 50px 50px; min-height: auto; }
+    .footer { background: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  
+  <!-- ===== Seal watermark ===== -->
+  <div class="seal-watermark">
+    <svg viewBox="0 0 100 100" width="100%" height="100%" style="fill: #00a651;">
+      <circle cx="50" cy="50" r="44" stroke="#00a651" stroke-width="1" fill="none" />
+      <text x="50" y="46" font-size="6" text-anchor="middle" font-family="'Hind Siliguri'" font-weight="bold">??????? ??????</text>
+      <text x="50" y="58" font-size="8" text-anchor="middle" font-family="'Hind Siliguri'" font-weight="bold" fill="#ed1c24">????</text>
+    </svg>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <div class="header-row">
+    <div class="logo-left">??????<br>????</div>
+    <div class="header-center">
+      <div class="office-title">??????? ?????? ?????????</div>
+      <div class="office-loc">???????, ????????</div>
+      <div class="estb">???????? ???? ?????</div>
+      <div class="date-line" contenteditable="true">?????? ????-??-??</div>
+    </div>
+    <div class="logo-right">????????<br>?????</div>
+  </div>
+
+  <!-- ===== Title ===== -->
+  <div class="title-container">
+    <div class="title">????????? ??? ????</div>
+  </div>
+
+  <!-- ===== Cert number (20 Boxes as per image) ===== -->
+  <div class="cert-no-row">
+    <div class="cert-no-label">????????? ??????? ??:</div>
+    <div class="cert-no-boxes">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="??">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+      <input type="text" maxlength="1" value="?"><input type="text" maxlength="1" value="?">
+    </div>
+  </div>
+
+  <!-- ===== Photo ===== -->
+  <div class="photo-box">
+    <span>???</span>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <div class="content">
+    <div class="intro">?? ????? ????????? ??? ?????? ??,</div>
+
+    <div class="field-row">
+      <div class="field-label">???</div>
+      <div class="field-colon">:</div>
+      <div class="field-value" contenteditable="true">??????? ??????</div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-label">????? ???</div>
+      <div class="field-colon">:</div>
+      <div class="field-value" contenteditable="true">?????? ??????</div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-label">????</div>
+      <div class="field-colon">:</div>
+      <div class="field-value" contenteditable="true">??????? ????</div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-label">???? ??????? ??</div>
+      <div class="field-colon">:</div>
+      <div class="field-value" contenteditable="true">?????????????????</div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-label">??????</div>
+      <div class="field-colon">:</div>
+      <div class="field-value address-block">
+        <div contenteditable="true">??????? ??: ???</div>
+        <div contenteditable="true">???? ??: ??</div>
+        <div contenteditable="true">??????/??????: ??????????</div>
+        <div contenteditable="true">??????? ??: ??</div>
+        <div contenteditable="true">?????: ???????</div>
+        <div contenteditable="true">??????? ??????, ????????</div>
+      </div>
+    </div>
+
+    <div class="paragraph" contenteditable="true">
+      ???? ???? ??????? ???? ??????? ??????? ???? ??????? ???????? ? ?????????? ??????? ???? ??????? ???? ????? ???????? ??????? ? ??????? ?????? ???? ???? ????? ?????
+    </div>
+    
+    <div class="paragraph" contenteditable="true">
+      ??? ????? ?????? ?????????? ?????? ????? ????
+    </div>
+
+    <!-- ===== Signature ===== -->
+    <div class="signature-section">
+      <div class="line"></div>
+      <div class="role" contenteditable="true">???????</div>
+      <div class="org" contenteditable="true">??????? ??????, ????????</div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer">
+    <div class="footer-left">Copyright © 2022-2026 ??????? ?????? . All rights reserved.</div>
+    <div class="footer-right">Design & Developed By 2A IT LIMITED</div>
+  </div>
+
+</div>
+
+</body>
+</html>

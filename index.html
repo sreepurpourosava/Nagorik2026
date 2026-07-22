@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>নাগরিকত্ব সনদ পত্র</title>
+    <title>নাগরিকত্ব সনদ পত্র - শ্রীপুর পৌরসভা</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
 
         body {
-            font-family: 'Noto Serif Bengali', Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Noto Serif Bengali', serif, Arial;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -17,32 +17,34 @@
         }
 
         .certificate {
-            width: 700px;
+            width: 750px;
             background: #fff;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            padding: 40px 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
             box-sizing: border-box;
         }
 
-        /* Watermark Background */
+        /* ------------------
+           মাঝখানের জলছাপ (WATERMARK)
+           ------------------ */
         .watermark {
             position: absolute;
-            top: 52%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 360px;
-            opacity: 0.15;
+            width: 380px;
+            opacity: 0.12; /* হালকা ঝাপসা লুকের জন্য */
             pointer-events: none;
             z-index: 1;
         }
 
         .content {
             position: relative;
-            z-index: 2;
+            z-index: 2; /* লেখা যেন জলছাপের উপরে ভেসে থাকে */
         }
 
-        /* Header Layout */
+        /* হেডার */
         .header {
             display: flex;
             justify-content: space-between;
@@ -68,7 +70,7 @@
 
         .header-center h3 {
             margin: 4px 0;
-            color: #a80000;
+            color: #bd0000;
             font-size: 16px;
         }
 
@@ -83,7 +85,7 @@
             margin-top: 15px;
         }
 
-        /* Certificate Title */
+        /* টাইটেল */
         .cert-title {
             text-align: center;
             margin: 25px 0 15px 0;
@@ -95,7 +97,7 @@
             font-weight: 700;
         }
 
-        /* Certificate Number & Profile Image */
+        /* সনদ নম্বর ও প্রোফাইল ছবি */
         .top-info {
             display: flex;
             justify-content: space-between;
@@ -129,18 +131,18 @@
         }
 
         .user-photo {
-            width: 90px;
-            height: 110px;
+            width: 95px;
+            height: 115px;
             border: 1px solid #ccc;
             object-fit: cover;
         }
 
-        /* Body Details */
+        /* বডি ডিটেইলস */
         .details-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .details-table td {
@@ -169,7 +171,7 @@
             font-size: 14px;
         }
 
-        /* Signature */
+        /* স্বাক্ষর */
         .signature-area {
             margin-top: 70px;
             text-align: center;
@@ -186,11 +188,11 @@
             font-size: 13px;
         }
 
-        /* Footer */
+        /* ফুটার */
         .footer {
             margin-top: 40px;
             padding-top: 8px;
-            border-top: 1px solid #eee;
+            border-top: 1px dashed #ccc;
             display: flex;
             justify-content: space-between;
             font-size: 10px;
@@ -201,16 +203,16 @@
 <body>
 
 <div class="certificate">
-    <!-- Watermark Logo -->
-    <img src="sreepur_logo.png" class="watermark" alt="watermark">
+    <!-- মাঝখানের জলছাপ হিসেবে লোগো -->
+    <img src="logo.png" class="watermark" alt="Watermark">
 
     <div class="content">
-        <!-- Header Section -->
+        <!-- হেডার অংশ -->
         <div class="header">
             <div>
-                <!-- Sreepur Municipality Logo -->
-                <img src="sreepur_logo.png" class="header-logo" alt="শ্রীপুর পৌরসভা">
-                <div class="issue-date">তারিখঃ ২০২৬-০৩-১৬</div>
+                <!-- বামের লোগো -->
+                <img src="logo.png" class="header-logo" alt="শ্রীপুর পৌরসভা">
+                <div class="issue-date">তারিখঃ ২০২৬-০৭-২২</div>
             </div>
 
             <div class="header-center">
@@ -220,62 +222,62 @@
             </div>
 
             <div>
-                <!-- Govt Logo -->
-                <img src="gov_logo.png" class="header-logo" alt="বাংলাদেশ সরকার">
+                <!-- ডানপাশে সরকারি লোগোর জন্য Placeholder (লোগো না থাকলে পৌরসভা লোগোই থাকবে) -->
+                <img src="logo.png" class="header-logo" alt="লোগো">
             </div>
         </div>
 
-        <!-- Title -->
+        <!-- টাইটেল -->
         <div class="cert-title">
             <h1>নাগরিকত্ব সনদ পত্র</h1>
         </div>
 
-        <!-- Certificate Number & Photo Bar -->
+        <!-- সনদপত্র নম্বর ও পাসপোর্ট ছবি -->
         <div class="top-info">
             <div class="cert-num-container">
                 নাগরিকত্ব সনদপত্র নংঃ
                 <div class="boxes">
-                    <div class="box">২</div><div class="box">০</div><div class="box">২</div><div class="box">৬</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">৪</div><div class="box">৯</div><div class="box">৯</div><div class="box">৩</div>
+                    <div class="box">৯</div><div class="box">০</div><div class="box">৩</div><div class="box">৬</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">৫</div><div class="box">৩</div><div class="box">৪</div><div class="box">৮</div>
                 </div>
             </div>
 
-            <!-- Profile Photo -->
-            <img src="user_photo.jpg" class="user-photo" alt="ছবি">
+            <!-- আপলোড করা পাসপোর্ট সাইজ ছবি -->
+            <img src="60827230967.jpg" class="user-photo" alt="নাগরিকের ছবি">
         </div>
 
-        <!-- Body Content -->
+        <!-- তথ্য টেবিল -->
         <p style="font-size: 14px; margin-bottom: 8px;">এই মর্মে প্রত্যয়ন করা যাচ্ছে যে,</p>
 
         <table class="details-table">
             <tr>
                 <td class="label-col">নাম</td>
                 <td class="colon-col">:</td>
-                <td><strong>তাহমিনা আক্তার</strong></td>
+                <td><strong>নীরব খান</strong></td>
             </tr>
             <tr>
                 <td class="label-col">পিতার নাম</td>
                 <td class="colon-col">:</td>
-                <td>রিয়াজ উদ্দিন</td>
+                <td>আলতাফ হোসেন</td>
             </tr>
             <tr>
                 <td class="label-col">মাতা</td>
                 <td class="colon-col">:</td>
-                <td>হাসনারা বেগম</td>
+                <td>হাজেরা খাতুন</td>
             </tr>
             <tr>
                 <td class="label-col">জন্ম নিবন্ধন নং</td>
                 <td class="colon-col">:</td>
-                <td>২০০৬০০২৫৫৭৮৬৬৭৬০০</td>
+                <td>২০০৮৩৩২৫৫০৯১১৭৮৬৩</td>
             </tr>
             <tr>
                 <td class="label-col">ঠিকানা</td>
                 <td class="colon-col">:</td>
                 <td>
-                    হোন্ডিং নং: ১৪৭<br>
-                    ব্লক নং: সি<br>
-                    মহল্লা/রাস্তা: বহেরারচালা<br>
-                    ওয়ার্ড নং: ০৮<br>
-                    ডাকঘর: সিলাইদহ<br>
+                    হোন্ডিং নং: ১৬<br>
+                    ব্লক নং: এ<br>
+                    মহল্লা/রাস্তা: কেওয়া পশ্চিম খন্ড<br>
+                    ওয়ার্ড নং: ০৯<br>
+                    ডাকঘর: মাওনা বাজার<br>
                     শ্রীপুর পৌরসভা, গাজীপুর।
                 </td>
             </tr>
@@ -289,14 +291,14 @@
             আমি তাহার জীবনের সর্বাঙ্গীন উন্নতি কামনা করি।
         </div>
 
-        <!-- Signature -->
+        <!-- স্বাক্ষর -->
         <div class="signature-area">
             <div class="sig-line"></div>
             <div class="sig-title">প্রশাসক</div>
             <div style="font-size: 12px;">শ্রীপুর পৌরসভা, গাজীপুর।</div>
         </div>
 
-        <!-- Footer -->
+        <!-- ফুটার -->
         <div class="footer">
             <div>Copyright © 2022-2026 <span style="color:#008a3e; font-weight:bold;">শ্রীপুর পৌরসভা</span> . All rights reserved.</div>
             <div>Design & Developed By <strong>2A IT LIMITED</strong></div>

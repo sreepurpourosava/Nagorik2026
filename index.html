@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
 
         body {
-            font-family: 'Noto Serif Bengali', serif, Arial;
+            font-family: 'Noto Serif Bengali', serif, Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
@@ -19,7 +19,8 @@
         .certificate {
             width: 750px;
             background: #fff;
-            padding: 40px 50px;
+            padding: 30px 40px;
+            border: 3px double #008a3e; /* মূল পেজের সবুজ বর্ডার */
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
             box-sizing: border-box;
@@ -32,7 +33,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 380px;
-            opacity: 0.12;
+            opacity: 0.10;
             pointer-events: none;
             z-index: 1;
         }
@@ -86,13 +87,14 @@
         /* টাইটেল */
         .cert-title {
             text-align: center;
-            margin: 25px 0 15px 0;
+            margin: 20px 0 15px 0;
         }
 
         .cert-title h1 {
             font-size: 24px;
             margin: 0;
             font-weight: 700;
+            color: #000;
         }
 
         /* সনদ নম্বর ও ছবি */
@@ -144,7 +146,7 @@
         }
 
         .details-table td {
-            padding: 2px 0;
+            padding: 3px 0;
             vertical-align: top;
         }
 
@@ -171,7 +173,7 @@
 
         /* স্বাক্ষর */
         .signature-area {
-            margin-top: 70px;
+            margin-top: 65px;
             text-align: center;
         }
 
@@ -188,7 +190,7 @@
 
         /* ফুটার */
         .footer {
-            margin-top: 40px;
+            margin-top: 35px;
             padding-top: 8px;
             border-top: 1px dashed #ccc;
             display: flex;
@@ -201,13 +203,14 @@
 <body>
 
 <div class="certificate">
-    <!-- মাঝখানের জলছাপ -->
+    <!-- মাঝখানের ওয়াটারমার্ক -->
     <img src="logo.png" class="watermark" alt="Watermark">
 
     <div class="content">
         <!-- হেডার অংশ -->
         <div class="header">
             <div>
+                <!-- শ্রীপুর পৌরসভা লোগো -->
                 <img src="logo.png" class="header-logo" alt="শ্রীপুর পৌরসভা">
                 <div class="issue-date">তারিখঃ ২০২৬-০৭-২২</div>
             </div>
@@ -219,6 +222,7 @@
             </div>
 
             <div>
+                <!-- বাংলাদেশ সরকার লোগো -->
                 <img src="gov.png" class="header-logo" alt="বাংলাদেশ সরকার">
             </div>
         </div>
@@ -228,16 +232,16 @@
             <h1>নাগরিকত্ব সনদ পত্র</h1>
         </div>
 
-        <!-- সনদপত্র নম্বর (২০২৬০০০০০০০০৫৩৪৮) ও ছবি -->
+        <!-- সনদপত্র নম্বর ও ছবি -->
         <div class="top-info">
             <div class="cert-num-container">
                 নাগরিকত্ব সনদপত্র নংঃ
                 <div class="boxes">
-                    <div class="box">২</div><div class="box">০</div><div class="box">২</div><div class="box">৬</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">৫</div><div class="box">৩</div><div class="box">৪</div><div class="box">৮</div>
+                    <div class="box">২</div><div class="box">০</div><div class="box">২</div><div class="box">৬</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">০</div><div class="box">৫</div><div class="box">৩</div><div class="box">৫</div><div class="box">১</div>
                 </div>
             </div>
 
-            <!-- প্রার্থীর নতুন ছবি -->
+            <!-- খোরশেদ আলমের ছবি -->
             <img src="khorshed.jpg" class="user-photo" alt="ছবি">
         </div>
 
@@ -248,12 +252,17 @@
             <tr>
                 <td class="label-col">নাম</td>
                 <td class="colon-col">:</td>
-                <td><strong>খোরশেদ আলম পাটোয়ারী</strong></td>
+                <td><strong>খোরশেদ আলম পাটোয়ারী</strong></td>
             </tr>
             <tr>
-                <td class="label-col">জন্ম তারিখ</td>
+                <td class="label-col">পিতার নাম</td>
                 <td class="colon-col">:</td>
-                <td>০১-১১-১৯৭৫</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td class="label-col">মাতা</td>
+                <td class="colon-col">:</td>
+                <td>—</td>
             </tr>
             <tr>
                 <td class="label-col">জন্ম নিবন্ধন নং</td>
@@ -266,7 +275,9 @@
                 <td>
                     হোন্ডিং নং: ১৯২<br>
                     ব্লক নং: এইচ<br>
+                    মহল্লা/রাস্তা: কেওয়া পশ্চিম খন্ড<br>
                     ওয়ার্ড নং: ০৮<br>
+                    ডাকঘর: মাওনা বাজার<br>
                     শ্রীপুর পৌরসভা, গাজীপুর।
                 </td>
             </tr>
@@ -289,7 +300,7 @@
 
         <!-- ফুটার -->
         <div class="footer">
-            <div>Copyright © 2022-2026 <span style="color:#008a3e; font-weight:bold;">শ্রীপুর পৌরসভা</span> . All rights reserved.</div>
+            <div>Copyright © 2022-2026 <a href="https://sreepur-pourashava.2aitltd.com" target="_blank" style="color:#008a3e; font-weight:bold; text-decoration:none;">শ্রীপুর পৌরসভা</a> . All rights reserved.</div>
             <div>Design & Developed By <strong>2A IT LIMITED</strong></div>
         </div>
     </div>
